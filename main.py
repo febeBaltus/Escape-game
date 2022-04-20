@@ -28,7 +28,7 @@ while True:
     for event in pygame.event.get():
         if event.type == QUIT:
             quit()
-            
+
         elif event.type == KEYDOWN:
-                if event.key == K_ESCAPE:
-                    quit()
+            if event.key == K_ESCAPE:
+                quit()

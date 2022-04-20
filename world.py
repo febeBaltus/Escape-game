@@ -20,9 +20,8 @@ class World:
     def __init__(self):
         DIM = 800
         self.DISPLAYSURF = pygame.display.set_mode(SIZE)
-        self.background = pygame.image.load("achtergrond3.jpg")
+        self.background = pygame.image.load("./media/achtergrond3.jpg")
         self.background = pygame.transform.scale(self.background, SIZE)  # 1920 x 1080
-
 
     def act(self):
         self.DISPLAYSURF.blit(self.background, (0, 0))
