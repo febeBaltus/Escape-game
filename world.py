@@ -8,7 +8,7 @@ from pygame.locals import *
 import msvcrt
 from astronaut import Player
 
-# SIZE = WIDTH, HEIGHT = 500, 400
+
 EnableFullScreen = False
 
 pygame.init()
@@ -21,10 +21,14 @@ class World:
         DIM = 800
         self.DISPLAYSURF = pygame.display.set_mode(SIZE)
         self.background = pygame.image.load("./media/achtergrond3.jpg")
-        self.background = pygame.transform.scale(self.background, SIZE)  # 1920 x 1080
+        self.background = pygame.transform.scale(self.background, SIZE)
+        self.astronaut = Player()
 
     def act(self):
         self.DISPLAYSURF.blit(self.background, (0, 0))
+        self.astronaut.move()
+        self.astronaut.draw(self.DISPLAYSURF)
+        self.astronaut.grow()
 
     def setFullScreen(self):
         pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
