@@ -7,9 +7,7 @@ class Player(pygame.sprite.Sprite):
         self.oorspronkelijk_image = pygame.image.load("astro.jpg")
         self.hoogte = self.oorspronkelijk_image.get_height()
         self.breedte = self.oorspronkelijk_image.get_width()
-        self.image = pygame.transform.scale(
-            self.oorspronkelijk_image, (self.breedte / 2, self.hoogte / 2)
-        )
+        self.image = pygame.transform.scale(self.oorspronkelijk_image, (self.breedte / 2, self.hoogte / 2))
         self.rect = self.image.get_rect()
         self.rect.center = (600, 600)
         self.schaal = 100
@@ -31,17 +29,14 @@ class Player(pygame.sprite.Sprite):
         keys = pygame.key.get_pressed()
 
         if keys[pygame.K_UP]:
-            self.image = pygame.transform.scale(
-                self.image,
-                (self.breedte1 * self.schaal / 100, self.hoogte1 * self.schaal / 100),
-            )
+            keys = pygame.key.get_pressed()
+
+        if keys[pygame.K_UP]:
+            self.image = pygame.transform.scale(self.image, (self.breedte1*self.schaal/100, self.hoogte1*self.schaal/100))
             self.schaal -= 5
 
         if keys[pygame.K_DOWN]:
-            self.image = pygame.transform.scale(
-                self.image,
-                (self.breedte1 * self.schaal / 100, self.hoogte1 * self.schaal / 100),
-            )
+            self.image = pygame.transform.scale(self.image, (self.breedte1*self.schaal/100, self.hoogte1*self.schaal/100))
             self.schaal += 5
 
     def draw(self, surface):
