@@ -22,7 +22,7 @@ def quit():
 
 
 while True:
-    FPS.tick(15)
+    FPS.tick(30)
     world.act()
     pygame.display.update()
     for event in pygame.event.get():
